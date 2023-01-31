@@ -5,6 +5,6 @@ public class Program {
 
 
         Base b1 = new Base();
-        b1.afficher();
+        b1.ToBase();
     }
 }
