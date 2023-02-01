@@ -1,5 +1,4 @@
 package be.ephec.java.exercice.e01;
-
 public class Person {
     public String lastName;
     public String firstName;
