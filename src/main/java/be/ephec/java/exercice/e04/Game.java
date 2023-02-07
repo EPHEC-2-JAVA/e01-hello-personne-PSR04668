@@ -13,15 +13,15 @@ public class Game {
         this.maxPoints = maxPoints;
     }
 
-    public String playAndReturnWinner() {
+    public Player playAndReturnWinner() {
 
         while (p1.getPoints() < maxPoints && p2.getPoints() < maxPoints) {
             playNextRound();
         }
-        String resultValue = p1.getPoints()>p2.getPoints()?p1.getFirstName() :  p2.getFirstName();
+
         // remplacer l'instruction suivante par une instruction contenant un opérateur ternaire.
         // La méthode doit retourner le joueur qui a gagné (= celui qui a le plus de points).
-        return resultValue;
+        return p1.getPoints() > p2.getPoints() ? p1 : p2;
     }
 
     private void playNextRound() {
