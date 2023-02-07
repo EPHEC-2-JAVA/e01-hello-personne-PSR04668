@@ -12,7 +12,8 @@ public class Program {
         for (int [] i : triangle){
             for (int  j : i) {
                 if(j > 0)
-                System.out.print(j + "");
+
+                    System.out.print(j + "");
             }
             System.out.println();
         }

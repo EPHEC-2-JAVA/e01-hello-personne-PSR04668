@@ -3,7 +3,7 @@ package be.ephec.java.exercice.e04;
 import java.util.Random;
 
 public class Game {
-    Player p1, p2;
+    Player p1, p2, winner;
     int maxPoints;
     Random dice = new Random();
 
@@ -13,14 +13,15 @@ public class Game {
         this.maxPoints = maxPoints;
     }
 
-    public Player playAndReturnWinner() {
+    public String playAndReturnWinner() {
+
         while (p1.getPoints() < maxPoints && p2.getPoints() < maxPoints) {
             playNextRound();
         }
-
+        String resultValue = p1.getPoints()>p2.getPoints()?p1.getFirstName() :  p2.getFirstName();
         // remplacer l'instruction suivante par une instruction contenant un opérateur ternaire.
         // La méthode doit retourner le joueur qui a gagné (= celui qui a le plus de points).
-        return null;
+        return resultValue;
     }
 
     private void playNextRound() {
@@ -30,8 +31,10 @@ public class Game {
             result2 = rollDice();
         } while (result1 == result2);
         // insérer ici l'instruction contenant l'opérateur ternaire
+        winner = (result1 > result2)?p1:p2;
+        winner.addPoint();
 
-        //
+
     }
 
     private int rollDice() {

@@ -7,8 +7,8 @@ public class Program {
 
         Game game = new Game(p1, p2, 10);
 
-        Player winner = game.playAndReturnWinner();
-        System.out.println("Et le gagnant est " + winner.getFirstName());
+
+        System.out.println("Et le gagnant est " + game.playAndReturnWinner());
 
     }
 
